@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/stylecontact.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <div id="logo"> <img src="/static/mov.png" />MRS</div>
+            <li id="id"><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Services</a></li>
+            <li><a href="contact">Contact US</a></li>
+        </ul>
+    </nav>
+
+<!--{% extends "base.html" %} 
+
+{% block scripts %}
+      <script type="text/javascript" src="/stat/index.js"></script>
+{% endblock %}
+
+{% block style %}
+      <link rel="stylesheet" href="/stat/style.css">
+      <link rel="stylesheet" href="/stat/stylecontact.css">
+{% endblock %}
+
+
+
+
+{% block content %}-->
+    <div class="container"> 
+      <h1> Contact Us</h1>
+      <form action="/contact",class="input",method="post">
+        <input type="text",class="my",name="name",placeholder="Enter your name. ">
+        <input type="email",class="my",name="email",placeholder="Enter your email. ">
+        <input type="text",class="my",name="gender",placeholder="Enter your gender. ">
+        <input type="phone",class="my",name="Phno",placeholder="Enter your ph-no. ">
+        <input type="text",class="my",name="address",placeholder="Enter your address. ">
+        <input type="text",class="my",name="desc",placeholder="Enter your consern. ">
+        <button class="btn">
+            Submit</button>
+      </form>
+    </div>
+    <section id="footer">Copyright 2020 @MRS.com | All Right Reserve.</section>
+
+    <script type="text/javascript" src="/static/index.js"></script>
+
+</body>
+</html>
+<!--{% endblock %}-->

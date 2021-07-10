@@ -1,0 +1,707 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,900&family=Kaushan+Script&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&family=Kaushan+Script&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=Reggae+One&display=swap');
+
+
+*{
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    
+}
+body{
+    overflow-x: hidden;
+    background-color: black;
+}
+#logo{
+    display: flex;
+    color:wheat;
+    align-items: center;
+    margin:0 14px;
+
+}
+
+
+#logo img{
+    height: 40px;
+    filter:invert(1);
+}
+#navbarr{
+    background-color: black;
+    padding: 6px 14px;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: larger;
+    
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+li{
+   list-style: none;
+   
+}
+
+a{
+    text-decoration: none;
+    font-weight: bolder;
+    padding:13px 30px;
+    color: whitesmoke;
+    font-size: 2.7 rem;
+    margin: 1px 3px;
+    
+    
+}
+a:hover{
+    color:red;
+    
+
+}
+#log {
+    display:inline-block ;
+    margin-left: 38em;
+}
+#log ul li a{
+    text-decoration: none;
+    font-weight: bolder;
+    padding:10px 10px;
+    color: whitesmoke;
+    font-size: 2.5 rem;
+    margin: 1px 2px;
+    border: 2px solid whitesmoke;
+    
+}
+#log a:hover{
+    color: black;
+    background-color: whitesmoke;
+    
+    
+}
+#introSection{
+    /*background-color: aqua;
+    background: center/cover no-repeat url('/static/iron.jfif');*/
+    height: 82.2vh;
+    display: block;
+    margin:auto;
+    
+    
+}
+.wrapper{
+    outline: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.6);
+    max-width: 550px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+#introSection input{
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    width: 85%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.searchbtn{
+    background: #ffec00;
+    width: 10%;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.searchbtn .bi{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+}
+.containt{
+    margin-top: 6em;
+}
+.con1{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.88);
+    height: 80vh;
+    position: relative;
+    margin:auto;
+
+}
+#co{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.88);
+    height: 65vh;
+    position: relative;
+    margin:auto;
+
+}
+.idx{
+    font-family: cursive;
+    
+    margin: auto;
+    margin-bottom: 1em;
+    
+}
+#idx1{
+    color: red;
+    text-shadow: 4px 4px 2px paleturquoise;
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 50px;
+    text-decoration: 2px dotted whitesmoke;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+#idx2{
+    color: rgb(134, 40, 134);
+    text-shadow: 4px 4px 1px powderblue;
+    font-family: 'Oi', cursive;
+    font-weight: 100;
+}
+#idx3{
+    color: khaki;
+    text-shadow: 4px 4px 1px brown;
+    font-family: 'Reggae One', cursive;
+}
+#idx4{
+    color: pink;
+    text-shadow: 4px 4px 2px blue;
+}
+#idx6{
+    color: gold;
+    text-shadow: 4px 4px 1px rgb(240, 125, 80);
+    font-family: 'Reggae One', cursive;
+    text-decoration:underline;
+    text-decoration-color: lavenderblush;
+    margin-top: 2em;
+
+}
+.xx{
+    
+    display: flex;
+    justify-content:center;
+    padding: 5px;
+}
+
+
+.box{
+    width: 330px;
+    border-radius: 33px;
+    overflow: hidden;
+    margin: 12px;
+    border: 4px solid brown;
+}
+
+.boxx{
+    width: 330px;
+    border-radius: 33px;
+    overflow: hidden;
+    margin: 20px 20px 0px 50px;
+    border: 4px solid brown;
+}
+.box:hover
+{
+    box-shadow: 2px 2px 30px snow;
+
+}
+.slide-img{
+    height: 325px;
+    position: relative;
+
+}
+#rot{
+    height: 400px;
+    position: relative;
+    
+}
+.slide-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.detail-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+.type{
+    display: flex;
+    flex-direction: column;
+}
+
+.type span{
+    color: pink;
+
+}
+.detail-box a{
+    color: rgb(226, 217, 85);
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: poppins;
+    letter-spacing: 0.5px;
+}
+.type a{
+    color: seashell;
+    margin: 5px 0px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding-right: 8px;
+}
+.flip-box {
+    background-color: transparent;
+    
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: slateblue;
+    color: white;
+    transform: rotateY(180deg);
+    height: 25em;
+    
+    
+  }
+  .story{
+      align-items: center;
+      
+  }
+  .story h2{
+      text-decoration: underline;
+      font-size: 3rem;
+      margin-top: 10%;
+      font-family: 'Akaya Telivigala', cursive;
+      color: brown;
+
+  }
+  .story p{
+      text-decoration: wavy;
+      margin-top: 20%;
+      font-size: 2rem;
+  }
+
+  .vis {
+      align-items: center;
+      margin-top: 5em;
+  }
+  
+  #nam{
+      font-size: 25px;
+      border: 2px dotted black;
+      padding: 10px;
+
+  }
+  #nam:hover{
+    font-size: 25px;
+    border: 3px dotted rgb(206, 70, 70);
+    padding: 10px;
+    color: khaki;
+    background-color: black;
+    
+}
+.dis_vis {
+    align-items: center;
+    margin-top: 85%;
+}
+#namm{
+    font-size: 25px;
+    border: 2px dotted red;
+    padding: 10px;
+    margin: 2em 3em;
+}
+#namm:hover{
+  font-size: 25px;
+  border: 3px dotted rgb(206, 70, 70);
+  padding: 10px;
+  color: khaki;
+  background-color: indigo;
+  
+}
+.dd{
+    background-color: black;
+    display: flex;
+    
+    
+}
+.d1{
+    margin:3em;
+    border: 2px solid snow;
+    width: 605px;
+}
+.d1 img{
+    width:600px;
+    height:650px;
+    
+}
+.d2{
+    margin: 3em;
+    width: 600px;
+    
+}
+.d2 p{
+    color: red;
+    float: right;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  /* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  /* Position the "next button" to the right */
+.xx .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  /* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+.goto{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    background-color: slateblue;
+    opacity: 0.8;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.go-btn{
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: khaki;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: cursive;
+    border-radius: 20px;
+    box-shadow: 2px 2px 30px snow;
+
+}
+.go-btn:hover{
+color: khaki;
+background-color: black;
+transition: all ease 0.3s;
+}
+.goto{
+    visibility: hidden;
+}
+.slide-img:hover .goto{
+    visibility: visible;
+    animation: fade 0.5s;
+}
+.cs-hidden{
+    overflow: hidden;
+}
+
+#sponserSection{
+    
+    background-color: rgba(0, 0, 0, 0.88);
+
+    height: 50vh;
+
+}
+
+#sponsers{
+    height: 201px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 40px;
+    
+}
+.spImage{
+    height: 80%;
+    margin: 20px;
+}
+#missionSection{
+    background-color: rgba(0, 0, 0, 0.88);
+    height: 60vh;
+    position: relative;
+    margin:auto;
+    
+
+}
+#footer{
+    background-color: red;
+    height: 5vh;
+    display: flex;
+    color: indigo;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+
+}
+
+#missionSection #id1{
+    color:black;
+    margin: 0px 10vw;
+    padding: 5rem 0px 0px 0px;
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px red;
+    font-size: 1rem;
+    
+}
+#missionSection #id2{
+    color: black;
+    margin: 0px 20vw;
+    padding: 1px 0px;
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px olive;
+    font-size:4rem;
+}
+#missionSection #id3{
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    padding-top:20px ;
+    color: darkred;
+    text-shadow: 3px 3px 2px lightcyan;
+
+}
+#sponserSection #id4{
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    padding-top:20px ;
+    color: darkred;
+    text-shadow: 3px 3px 2px rgb(226, 217, 85);
+
+}
+
+.cardd{
+    border: 2px solid red;
+    width: 23%;
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 37px 2rem;
+    height: 221px;
+    border-radius: 45px;
+    color: lawngreen;
+}
+
+#missionSection .cardd-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.cardd-img img{
+    height: inherit;
+    filter: invert(1);
+}
+#missionSection .cardd-img{
+    height: 121px;
+    padding: 0 14px;
+    margin: 0px 1px;
+}
+.cardd h3{
+    text-align: center;
+    color: seashell;
+    padding: 17px 17px;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 1rem;
+}
+.containerr{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 15rem;
+    width: 80%;
+}
+#missionSection .cardd:hover{
+    color: khaki;
+    background-color: slateblue;
+    font-family: 'Balsamiq Sans', cursive;
+    
+
+}
+#missionSection .cardd-containerr{
+    padding: 0 20px;
+}
+#missionSection .cardd-containerr p{
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 18px;
+}
+
+.crossfade > figure {
+    animation: imageAnimation 50s linear infinite 6s;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center center;
+    color: transparent;
+    height: 95%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 0;
+    margin-top: 52px;
+  }
+
+.crossfade > figure:nth-child(1) { background-image: url('/static/thor.jfif'); }
+
+.crossfade > figure:nth-child(2) {
+  animation-delay: 10s;
+  background-image: url('/static/iron.jfif');
+}
+
+.crossfade > figure:nth-child(3) {
+  animation-delay: 20s;
+  background-image: url('/static/pos2.jpg');
+}
+
+.crossfade > figure:nth-child(4) {
+  animation-delay: 30s;
+  background-image: url('/static/pos3.jpg');
+}
+
+.crossfade > figure:nth-child(5) {
+  animation-delay: 40s;
+  background-image: url('/static/iron.jfif');
+}
+.vib:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 2s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+@keyframes 
+imageAnimation {  0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 0
+}
+ 100% {
+ opacity: 0
+}
+}
+
+@keyframes fade{
+
+    0% {
+     
+     opacity: 0;
+    }
+    100% {
+     opacity: 1;
+    }
+    

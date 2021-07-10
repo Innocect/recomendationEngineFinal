@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Recommendation System</title>
+    <link rel="shortcut icon" href="{% static 'img/controls.png' %}">
+    <link rel="stylesheet" href="{% static 'img/style.css' %}">
+    <link rel="stylesheet" href="{% static 'img/stylecontact.css' %}">
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        href="file.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript" src="{% static 'img/Jquery.js' %}"></script>
+    <script type="text/javascript" src="/Lightsliders/lightslider.js"></script>
+<style>
+
+.crossfade > figure {
+    animation: imageAnimation 50s linear infinite 6s;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center center;
+    color: transparent;
+    height: 95%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    z-index: 0;
+    margin-top: 52px;
+  }
+
+.crossfade > figure:nth-child(1) {
+    animation-delay: 1s;
+    background-image: url('{% static 'img/pos2.jpg' %}'); }
+
+.crossfade > figure:nth-child(2) {
+  animation-delay: 10s;
+  background-image: url('{% static 'img/iron.jfif' %}');
+}
+
+.crossfade > figure:nth-child(3) {
+  animation-delay: 20s;
+  background-image: url('{% static 'img/pos3.jpg' %}');
+}
+
+.crossfade > figure:nth-child(4) {
+  animation-delay: 30s;
+  background-image: url('{% static 'img/thor.jpg' %}');
+}
+
+.crossfade > figure:nth-child(5) {
+  animation-delay: 40s;
+  background-image: url('{% static 'img/darkk.png' %}');
+}
+.vib:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 2s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+html{
+   scroll-behavior: smooth;
+}
+
+  .dropbtn {
+  background-color: khaki;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: indianred;
+    color: black;
+}
+
+/* The search field */
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+      border-radius: 3px;
+
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+
+  width: 465px;
+  margin: auto;
+  display: inline-block;
+  left: 40%;
+  top: 50%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+    overflow-y: auto;
+  height: 280px;
+  width: 400px;
+  position: absolute;
+  background-color: black;
+  color: khaki;
+  min-width: 380px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+    margin: 3.5em 0;
+
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: khaki;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: black;
+color: royalblue}
+
+a{
+    text-decoration: none;
+    font-weight: bolder;
+    padding:13px 30px;
+    color: whitesmoke;
+    font-size: 2.7 rem;
+    margin: 1px 3px;
+
+
+}
+a:hover{
+    color:red;
+
+
+}
+
+#introSection{
+    /*background-color: aqua;
+    background: center/cover no-repeat url('/static/iron.jfif');*/
+    height: 82.2vh;
+    display: block;
+    margin: 0px 0px -11px 0px;
+
+
+}
+.containt{
+    margin-top: 1em;
+}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+@keyframes
+imageAnimation {  0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 0
+}
+ 100% {
+ opacity: 0
+}
+}
+
+@keyframes fade{
+
+    0% {
+
+     opacity: 0;
+    }
+    100% {
+     opacity: 1;
+    }
+/*.crossfade > figure {*/
+/*    animation: imageAnimation 50s linear infinite 6s;*/
+/*    backface-visibility: hidden;*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*    color: transparent;*/
+/*    height: 95%;*/
+/*    left: 0px;*/
+/*    opacity: 0;*/
+/*    position: absolute;*/
+/*    top: 0px;*/
+/*    width: 100%;*/
+/*    z-index: 0;*/
+/*    margin-top: 52px;*/
+/*  }*/
+
+/*.crossfade > figure:nth-child(1) { background-image: url('{% static 'img/pos2.jpg' %}'); }*/
+
+/*.crossfade > figure:nth-child(2) {*/
+/*  animation-delay: 10s;*/
+/*  background-image: url('{% static 'img/iron.jfif' %}');*/
+/*}*/
+
+/*.crossfade > figure:nth-child(3) {*/
+/*  animation-delay: 20s;*/
+/*  background-image: url('{% static 'img/pos3.jpg' %}');*/
+/*}*/
+
+/*.crossfade > figure:nth-child(4) {*/
+/*  animation-delay: 30s;*/
+/*  background-image: url('{% static 'img/pos1.jfif' %}');*/
+/*}*/
+
+/*.crossfade > figure:nth-child(5) {*/
+/*  animation-delay: 40s;*/
+/*  background-image: url('{% static 'img/pos5.jfif' %}');*/
+/*}*/
+/*.vib:hover {*/
+/*    !* Start the shake animation and make the animation last for 0.5 seconds *!*/
+/*    animation: shake 2s;*/
+
+/*    !* When the animation is finished, start again *!*/
+/*    animation-iteration-count: infinite;*/
+/*  }*/
+
+/*  @keyframes shake {*/
+/*    0% { transform: translate(1px, 1px) rotate(0deg); }*/
+/*    10% { transform: translate(-1px, -2px) rotate(-1deg); }*/
+/*    20% { transform: translate(-3px, 0px) rotate(1deg); }*/
+/*    30% { transform: translate(3px, 2px) rotate(0deg); }*/
+/*    40% { transform: translate(1px, -1px) rotate(1deg); }*/
+/*    50% { transform: translate(-1px, 2px) rotate(-1deg); }*/
+/*    60% { transform: translate(-3px, 1px) rotate(0deg); }*/
+/*    70% { transform: translate(3px, 1px) rotate(-1deg); }*/
+/*    80% { transform: translate(-1px, -1px) rotate(1deg); }*/
+/*    90% { transform: translate(1px, 2px) rotate(0deg); }*/
+/*    100% { transform: translate(1px, -2px) rotate(-1deg); }*/
+/*  }*/
+/*@keyframes*/
+/*imageAnimation {  0% {*/
+/* animation-timing-function: ease-in;*/
+/* opacity: 0;*/
+/*}*/
+/* 8% {*/
+/* animation-timing-function: ease-out;*/
+/* opacity: 1;*/
+/*}*/
+/* 17% {*/
+/* opacity: 1*/
+/*}*/
+/* 25% {*/
+/* opacity: 0*/
+/*}*/
+/* 100% {*/
+/* opacity: 0*/
+/*}*/
+/*}*/
+
+/*@keyframes fade{*/
+
+/*    0% {*/
+
+/*     opacity: 0;*/
+/*    }*/
+/*    100% {*/
+/*     opacity: 1;*/
+/*    }*/
+
+</style>
+
+</head>
+
+<body>
+    <nav id="navbarr">
+        <ul>
+            <div id="logo"> <img src="{% static 'img/mov.png' %}" />MRS</div>
+            <li id="id"><a href="/">Home</a></li>
+            <li><a href="https://innocect.github.io/">About the creator</a></li>
+            <li><a href="/">Services</a></li>
+            <li><a href="#footer">Contact </a></li>
+
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'login' %}">
+                            <span aria-hidden="true"></span>&nbsp;Login
+                        </a>
+            {%else%}
+            <a href="{% url 'logout' %}">
+                            <span aria-hidden="true"></span>Logout
+                        </a>
+            <center style="color:#fff"><h3>Welcome {{user.username}}!!</h3></center>
+            <a href="{% url 'index' %}"><span aria-hidden="true"></span>Get Recommendation</a>
+            {%endif%}
+
+
+        </ul>
+    </nav>
+    <section id="introSection">
+        <div class="crossfade">
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+        </div>
+<!--        <div class="wrapper">-->
+<!--            <form  role="search" method="get" action=''>-->
+<!--            <input type="text" class="input" name="searchIt" value="{{ request.GET.searchIt }}" placeholder="Search Your Favorite">-->
+<!--            <span class='input-group-btn'>-->
+<!--                <button class='button1' type='submit'>Search</button>-->
+<!--            </span>-->
+<!--            </form>-->
+<!--        </div>-->
+<div class="dropdown">
+  <input type="text" placeholder="Search Your Favorite" id="myInput" class="dropbtn" onclick="myFunction()" onkeyup="filterFunction()" ></input>
+  <div id="myDropdown" class="dropdown-content">
+<!--    <input type="text" placeholder="type..." id="myInput" onkeyup="filterFunction()">-->
+   {% if mo %}
+      {% for movie in mo %}
+        <a href="{% url 'rating' movie.id %}">{{movie}}</a>
+      {% endfor %}
+   {% endif %}
+
+  </div>
+</div>
+
+    </section>
+    <section class="containt">
+        <section class="containt">
+             <div class="row" >
+
+
+             </div>
+        {% if request.user.is_authenticated %}
+        <section class="con1">
+            <h1 class="idx" id="idx6">Top Recommendations</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    {% if movies %}
+                    {% for movie in movies%}
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{{ movie.movie_logo.url}}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>{{movie.title}}</h2>
+                                                <p style="font-size:17px">{{movie.descOneLine}}</p>
+                                                <div class="vis">
+                                                    {% if request.user.is_authenticated %}
+                                                        <a href="{% url 'rating' movie.id %}" id="nam">Visit</a>
+                                                    {%else%}
+                                                        <a href="login" id="nam">Visit</a>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+
+        </section>
+        <section class="con1" id="co">
+            <div class="xx" id="x">
+                <ul id="autoWidth" class="cs-hidden">
+                   {% if movies %}
+                    {% for movie in moviesBeh%}
+                    <li class="item-a">
+                        <div class="boxx">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{{ movie.movie_logo.url}}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>{{movie.title}}</h2>
+                                                <p style="font-size:17px">{{movie.descOneLine}}</p>
+                                                   <div class="vis">
+                                                        {% if request.user.is_authenticated %}
+                                                            <a href="rating/{{movie.id}}" id="nam">Visit</a>
+                                                        {%else%}
+                                                            <a href="login" id="nam">Visit</a>
+                                                        {%endif%}
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+            {% endif %}
+        {% if request.user.is_authenticated and moviesLiked %}
+        <section class="con1">
+            <h1 class="idx" id="idx1">Liked Movies</h1>
+
+
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    {% for movie in moviesLiked %}
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+
+                                            <img src="{{ movie.movie_logo.url}}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>{{movie.title}}</h2>
+                                                <p style="font-size:17px">{{movie.descOneLine}}</p>
+                                                <div class="vis">
+                                                    {% if request.user.is_authenticated %}
+                                                        <a href="rating/{{movie.id}}" id="nam">Visit</a>
+                                                    {%else%}
+                                                        <a href="login" id="nam">Visit</a>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+            <section class="con1">
+            <h1 class="idx" id="idx1">Comedy</h1>
+
+
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    {% if comedy %}
+                    {% for movie in comedy %}
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+
+                                            <img src="{{ movie.movie_logo.url}}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>{{movie.title}}</h2>
+                                                <p style="font-size:17px">{{movie.descOneLine}}</p>
+                                                <div class="vis">
+                                                    {% if request.user.is_authenticated %}
+                                                        <a href="rating/{{movie.id}}" id="nam">Visit</a>
+                                                    {%else%}
+                                                        <a href="login" id="nam">Visit</a>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                {% endfor %}
+                {% endif %}
+                </ul>
+            </div>
+        </section>
+            {% endif %}
+        </section>
+
+        <section class="con1">
+            <h1 class="idx" id="idx2">Action</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    {% if action %}
+                    {% for movie in action %}
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{{ movie.movie_logo.url}}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>{{movie.title}}</h2>
+                                                <p style="font-size:17px">{{movie.descOneLine}}</p>
+                                                <div class="vis">
+                                                    {% if request.user.is_authenticated %}
+                                                        <a href="{% url 'rating' movie.id %}" id="nam">Visit</a>
+                                                    {%else%}
+                                                        <a href="login" id="nam">Visit</a>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                {% endfor %}
+                {% endif %}
+                </ul>
+            </div>
+        </section>
+
+       <section class="con1">
+            <h1 class="idx" id="idx3">Drama</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    {% if drama %}
+                    {% for movie in drama %}
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{{ movie.movie_logo.url}}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>{{movie.title}}</h2>
+                                                <p style="font-size:17px">{{movie.descOneLine}}</p>
+                                                <div class="vis">
+                                                    {% if request.user.is_authenticated %}
+                                                        <a href="{% url 'rating' movie.id %}" id="nam">Visit</a>
+                                                    {%else%}
+                                                        <a href="login" id="nam">Visit</a>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="con1">
+            <h1 class="idx" id="idx4">Crime</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    {% if crime %}
+                    {% for movie in crime %}
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{{ movie.movie_logo.url }}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>{{movie.title}}</h2>
+                                                <p style="font-size:17px">{{movie.descOneLine}}</p>
+                                                <div class="vis">
+                                                    {% if request.user.is_authenticated %}
+                                                        <a href="{% url 'rating' movie.id %}" id="nam">Visit</a>
+                                                    {%else%}
+                                                        <a href="login" id="nam">Visit</a>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+
+    </section>
+    <section id="missionSection">
+        <h1 id="id3"> Our Mission </h1>
+        <div class="containerr">
+            <div class="cardd">
+                <h3>24*7 Entertenment</h3>
+                <div class="cardd-box">
+                    <div class="cardd-img">
+                        <img src="{% static 'img/1.png' %}">
+                    </div>
+
+                    <div class="cardd-content">
+                        <p> Trust-Us!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardd">
+                <h3>Choice A Excellant Among The Good.</h3>
+                <div class="cardd-box">
+                    <div class="cardd-img">
+                        <img src="{% static 'img/2.png' %}">
+                    </div>
+
+                    <div class="cardd-content">
+                        <p> Belive Us!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardd">
+                <h3>Quality Content Suggestor.</h3>
+                <div class="cardd-box">
+                    <div class="cardd-img">
+                        <img src="{% static 'img/3.png'%}">
+                    </div>
+
+                    <div class="cardd-content">
+                        <p> Keep Faith in Us!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section id="sponserSection">
+        <h1 id="id4"> Our Sponser</h1>
+        <div id="sponsers">
+            <img src="{% static 'img/logo1.png' %}" alt="sponcer img" class="spImage">
+            <img src="{% static 'img/logo2.png' %}" alt="sponcer img" class="spImage">
+            <img src="{% static 'img/logo3.png' %}" alt="sponcer img" class="spImage">
+            <img src="{% static 'img/logo4.png' %}" alt="sponcer img" class="spImage">
+
+        </div>
+    </section>-->
+
+
+
+    <section id="footer">Copyright 2021 @MRS.com | All Right Reserve.</section>
+    <script type="text/javascript">
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("item");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <script type="text/javascript" src="{% static 'img/script.js' %}"></script>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+
+  var x=document.getElementById("myDropdown").classList.toggle("show");
+  if (x.style.display == "none"){
+      x.style.display="inline-block";
+  }
+  else
+  {
+      x.style.display="none";
+
+  }
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+        // var slideIndex = 1;
+        // showSlides(slideIndex);
+        //
+        // // Next/previous controls
+        // function plusSlides(n) {
+        //     showSlides(slideIndex += n);
+        // }
+        //
+        // // Thumbnail image controls
+        // function currentSlide(n) {
+        //     showSlides(slideIndex = n);
+        // }
+        //
+        // function showSlides(n) {
+        //     var i;
+        //     var slides = document.getElementsByClassName("item");
+        //     var dots = document.getElementsByClassName("dot");
+        //     if (n > slides.length) { slideIndex = 1 }
+        //     if (n < 1) { slideIndex = slides.length }
+        //     for (i = 0; i < slides.length; i++) {
+        //         slides[i].style.display = "none";
+        //     }
+        //     for (i = 0; i < dots.length; i++) {
+        //         dots[i].className = dots[i].className.replace(" active", "");
+        //     }
+        //     slides[slideIndex - 1].style.display = "block";
+        //     dots[slideIndex - 1].className += " active";
+        // }
+    </script>
+    <script type="text/javascript" src="{% static 'img/script.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Recommendation System</title>
+    <link rel="shortcut icon" href="/static/img/controls.png">
+    <link rel="stylesheet" href="{% static 'img/style.css' %}">
+    <link rel="stylesheet" href="{% static 'img/stylecontact.css' %}">
+    <!-- CSS only
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+-->
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        href="file.js"></script>
+    <link rel="stylesheet" href="/Lightsliders/lightslider.css">
+
+
+
+
+
+</head>
+
+<body>
+    <nav id="navbarr">
+        <ul>
+            <div id="logo"> <img src="/static/mov.png" />MRS</div>
+            <li id="id"><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Services</a></li>
+            <li><a href="contact">Contact US</a></li>
+            <div id="log">
+                <ul>
+                    <!--<li><a href="sign">Sign In</a></li>-->
+                    <li><a href="/">Logout</a></li>
+                </ul>
+            </div>
+
+        </ul>
+    </nav>
+    <section id="introSection">
+        <div class="crossfade">
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+        </div>
+        <div class="wrapper">
+            <input type="text" class="input" placeholder="Search Your Favorite">
+            <div class="searchbtn">
+                <i class="bi bi-search"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="containt">
+
+        <!--</section> -->
+        <section class="con1">
+            <h1 class="idx" id="idx6">Top Recommendations</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos6.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos8.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos9.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos12.jfif" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+        <section class="con1" id="co">
+            <div class="xx" id="x">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="boxx">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos20.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="boxx">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos15.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="boxx">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos13.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+
+
+
+                </ul>
+
+            </div>
+        </section>
+        <section class="con1">
+            <h1 class="idx" id="idx1">New Release</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos5.jfif" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos6.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos7.jfif" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos8.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+        <section class="con1">
+            <h1 class="idx" id="idx2">Action</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos9.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos10.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos11.webp" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos12.jfif" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+        <section class="con1">
+            <h1 class="idx" id="idx3">Drama</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos13.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos14.jfif" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos15.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos16.jfif" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+
+        <section class="con1">
+            <h1 class="idx" id="idx4">Romance</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos21.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos18.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos19.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="/static/pos20.jpg" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="display" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+        <!--<section id="content">
+        <div class="main">
+
+        </div>
+    </section>-->
+    </section>
+
+
+
+
+    <section id="footer">Copyright 2021 @MRS.com | All Right Reserve.</section>
+
+    <script type="text/javascript" src="/static/script.js"></script>
+
+</body>
+
+</html>

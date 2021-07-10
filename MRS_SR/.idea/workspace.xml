@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d6bdfdd6-d487-4025-8cb0-89662d03c6db" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qEqtGw9RF4x8hkZKxgkgfn041w" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pro/MyBooks-master" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\MRS_SR\recommend\static\img" />
+      <recent name="E:\MRS_SR\recommend\templates\SidHtml\static\img" />
+      <recent name="D:\Movie_recommender_Common - Copy\recommend\static\img\img" />
+      <recent name="E:\PYCHARM\movie_recommender\recommend\static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Movie_recommender_Common - Copy" />
+      <recent name="E:\PYCHARM\movie_recommender\recommend\static" />
+      <recent name="E:\PYCHARM\movie_recommender\recommend\templates\Sid Html" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\hruti\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6bdfdd6-d487-4025-8cb0-89662d03c6db" name="Default Changelist" comment="" />
+      <created>1616655309818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616655309818</updated>
+      <workItem from="1623841465758" duration="1503000" />
+      <workItem from="1623844077437" duration="911000" />
+      <workItem from="1623845069056" duration="441000" />
+      <workItem from="1625738706280" duration="1256000" />
+      <workItem from="1625740865839" duration="1324000" />
+      <workItem from="1625742356305" duration="1368000" />
+      <workItem from="1625746065478" duration="639000" />
+      <workItem from="1625750313817" duration="620000" />
+      <workItem from="1625756373679" duration="1090000" />
+      <workItem from="1625758439858" duration="1204000" />
+      <workItem from="1625763228411" duration="1727000" />
+      <workItem from="1625765064099" duration="1672000" />
+      <workItem from="1625767493114" duration="1767000" />
+      <workItem from="1625769318791" duration="1798000" />
+      <workItem from="1625771343294" duration="1145000" />
+      <workItem from="1625801748244" duration="1727000" />
+      <workItem from="1625803813316" duration="1772000" />
+      <workItem from="1625805667399" duration="2099000" />
+      <workItem from="1625807958393" duration="1284000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

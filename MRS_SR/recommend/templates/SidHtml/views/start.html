@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Recommendation System</title>
+    <link rel="shortcut icon" href="{% static 'img/controls.png' %}">
+    <link rel="stylesheet" href="{% static 'img/style.css' %}">
+    <link rel="stylesheet" href="{% static 'img/stylecontact.css' %}">
+
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        href="file.js"></script>
+    <link rel="stylesheet" href="/Lightsliders/lightslider.css">
+
+
+    <script type="text/javascript" src="{% static 'img/Jquery.js' %}"></script>
+    <script type="text/javascript" src="/Lightsliders/lightslider.js"></script>
+<style>
+
+.crossfade > figure {
+    animation: imageAnimation 50s linear infinite 6s;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center center;
+    color: transparent;
+    height: 95%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 0;
+    margin-top: 52px;
+  }
+
+.crossfade > figure:nth-child(1) { background-image: url('{% static 'img/pos2.jpg' %}'); }
+
+.crossfade > figure:nth-child(2) {
+  animation-delay: 10s;
+  background-image: url('{% static 'img/iron.jfif' %}');
+}
+
+.crossfade > figure:nth-child(3) {
+  animation-delay: 20s;
+  background-image: url('{% static 'img/pos3.jpg' %}');
+}
+
+.crossfade > figure:nth-child(4) {
+  animation-delay: 30s;
+  background-image: url('{% static 'img/pos1.jfif' %}');
+}
+
+.crossfade > figure:nth-child(5) {
+  animation-delay: 40s;
+  background-image: url('{% static 'img/pos5.jfif' %}');
+}
+.vib:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 2s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+@keyframes
+imageAnimation {  0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 0
+}
+ 100% {
+ opacity: 0
+}
+}
+
+@keyframes fade{
+
+    0% {
+
+     opacity: 0;
+    }
+    100% {
+     opacity: 1;
+    }
+
+</style>
+
+</head>
+
+<body>
+    <nav id="navbarr">
+        <ul>
+            <div id="logo"> <img src="{% static 'img/mov.png' %}" />MRS</div>
+            <li id="id"><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Services</a></li>
+            <li><a href="contact">Contact </a></li>
+<!--             <a href="{% url 'logout' %}">-->
+<!--                            <span aria-hidden="true"></span>&nbsp;Logout-->
+<!--                        </a>-->
+<!--            <center style="color:#fff"><h2>Welcome {{user.username}}!!</h2></center>-->
+<!--            <div id="log">-->
+<!--                <ul>-->
+                    <!--<li><a href="sign">Sign In</a></li>-->
+                    <li><a href="login">Sign In</a></li>
+<!--                </ul>-->
+
+<!--            </div>-->
+
+        </ul>
+    </nav>
+    <section id="introSection">
+        <div class="crossfade">
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+        </div>
+        <div class="wrapper">
+
+            <input type="text" class="input" placeholder="Search Your Favorite">
+            <div class="searchbtn">
+                <i class="bi bi-search"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="containt">
+        <!--
+        <section class="con1">
+            <h1 class="idx" id="idx1">New Release</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos4.jpg" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2020</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos5.jfif" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2021</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos6.jpg" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2020</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos7.jfif" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2019</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!--
+            <li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+                    <!-- Next and previous buttons -->
+
+
+                <!--</ul>
+                <!--
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <!--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          </div>
+           The dots/circles
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+
+
+  </div>
+
+
+        </section>-->
+        <!--
+        <section class="con1">
+            <h1 class="idx" id="idx2">Action</h1>
+
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos10.jpg" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2020</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos11.webp" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2021</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos12.jfif" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2020</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="/stat/pos13.jpg" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2019</a>
+                            </div>
+                        </div>
+                    </li>
+                -->
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+<!--
+                </ul>
+
+            </div>
+        </section>-->
+        <!--
+        <section class="con1">
+            <h1 class="idx" id="idx3">Drama</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img class="vib" src="/stat/pos9.jpg" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2020</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img class="vib" src="/stat/pos14.jfif" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2021</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img class="vib" src="/stat/pos15.jpg" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2020</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img">
+                                <img class="vib" src="/stat/pos16.jfif" alt="1">
+                                <div class="goto">
+                                    <a href="#" class="go-btn">GO</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                <div class="type">
+                                    <a href="#">Masterpiece</a>
+                                    <span>New Release</span>
+                                </div>
+                                <a href="#" class="New">2019</a>
+                            </div>
+                        </div>
+                    </li>
+
+            <li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>
+                   Next and previous buttons -->
+
+<!--
+                </ul>
+
+        </section> -->
+        <section class="con1">
+            <h1 class="idx" id="idx1">New Release</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos5.jfif' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos6.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos7.jfif' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos8.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+        <section class="con1">
+            <h1 class="idx" id="idx2">Action</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos9.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos10.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos11.webp' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos12.jfif' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+        <section class="con1">
+            <h1 class="idx" id="idx3">Drama</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos13.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos14.jfif' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos15.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos16.jfif' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+
+        <section class="con1">
+            <h1 class="idx" id="idx4">Romance</h1>
+            <div class="xx">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos21.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>The Vow</h2>
+                                                <p>Romantic Journey of Promise.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="item-b">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos18.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Me Before You</h2>
+                                                <p>Love Is Blind</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-c">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos19.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+
+                                                <h2>Titanic</h2>
+                                                <p>Journey Of Ship which can never sink.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                    <li class="item-d">
+                        <div class="box">
+                            <div class="slide-img" id="rot">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img src="{% static 'img/pos20.jpg' %}" alt="Paris" style="height:400px;width:100%">
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="story">
+                                                <h2>La La Land</h2>
+                                                <p>Every Musical Love story is not a fairy tale.</p>
+                                                <div class="vis">
+                                                    <a href="sign" id="nam">Visit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!--<li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                           <img src="/stat/pos8.jpg" alt="1">
+                           <div class="goto">
+                               <a href="#" class="go-btn">GO</a>
+                           </div>
+                    </div>
+                    <div class="detail-box">
+                           <div class="type">
+                               <a href="#">Masterpiece</a>
+                               <span>New Release</span>
+                           </div>
+                           <a href="#" class="New">2018</a>
+                    </div>
+                </div>
+            </li>-->
+
+
+                </ul>
+
+            </div>
+        </section>
+
+        <!--<section id="content">
+        <div class="main">
+
+        </div>
+    </section>-->
+    </section>
+    <section id="missionSection">
+        <h1 id="id3"> Our Mission </h1>
+        <div class="containerr">
+            <div class="cardd">
+                <h3>24*7 Entertenment</h3>
+                <div class="cardd-box">
+                    <div class="cardd-img">
+                        <img src="{% static 'img/1.png' %}">
+                    </div>
+
+                    <div class="cardd-content">
+                        <p> Trust-Us!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardd">
+                <h3>Choice A Excellant Among The Good.</h3>
+                <div class="cardd-box">
+                    <div class="cardd-img">
+                        <img src="{% static 'img/2.png' %}">
+                    </div>
+
+                    <div class="cardd-content">
+                        <p> Belive Us!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardd">
+                <h3>Quality Content Suggestor.</h3>
+                <div class="cardd-box">
+                    <div class="cardd-img">
+                        <img src="{% static 'img/3.png'%}">
+                    </div>
+
+                    <div class="cardd-content">
+                        <p> Keep Faith in Us!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sponserSection">
+        <h1 id="id4"> Our Sponser</h1>
+        <div id="sponsers">
+            <img src="{% static 'img/logo1.png' %}" alt="sponcer img" class="spImage">
+            <img src="{% static 'img/logo2.png' %}" alt="sponcer img" class="spImage">
+            <img src="{% static 'img/logo3.png' %}" alt="sponcer img" class="spImage">
+            <img src="{% static 'img/logo4.png' %}" alt="sponcer img" class="spImage">
+
+        </div>
+    </section>
+
+
+    <section id="footer">Copyright 2021 @MRS.com | All Right Reserve.</section>
+    <script type="text/javascript">
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("item");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <script type="text/javascript" src="{% static 'img/script.js' %}"></script>
+
+</body>
+
+</html>

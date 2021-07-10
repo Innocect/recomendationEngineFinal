@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'img/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css'%}">
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' >
+    <style type="text/css">
+        #a{
+         border: white 0.5px solid;
+         border-radius:10%;
+        }
+        #conf{
+        background:black;
+        }
+        #txtcen{
+         color:red;
+         font-size:30px;
+        }
+        .d1{
+            margin:3em;
+            border: 2px solid snow;
+            width: 605px;
+            height: 653px;
+        }
+        .d1 img{
+            width:600px;
+            height:650px;
+            margin-top:-20px;
+
+        }
+        .star-rating {
+            line-height:32px;
+            font-size:2.55em;
+            margin-left:-33px;
+            border: 1px dashed snow;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            }
+        .star-rating .fa-star{
+        color: yellow;
+        }
+        .heart-rating {
+            line-height:32px;
+            font-size:1.55em;
+            margin-left:-33px;
+            }
+        .heart-rating .fa-heart{
+        color:yellow;
+        }
+        .button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 70px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 4px;
+          cursor: pointer;
+          margin-left:7px;
+        }
+        .button:hover {
+            background-color: #5bc0de;
+            color: black;
+        }
+        .button1 {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 12px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: -4px -4px;
+          cursor: pointer;
+          margin-left:4px;
+        }
+        .d21{
+            height: 600px;
+        }
+
+    </style>
+</head>
+<body>
+<nav id="navbarr">
+        <ul>
+            <div id="logo"> <img src="{% static 'img/mov.png' %}" />MRS</div>
+            <li id="id"><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Services</a></li>
+            <li><a href="contact">Contact </a></li>
+
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'login' %}">
+                            <span aria-hidden="true"></span>&nbsp;Login
+                        </a>
+            {%else%}
+            <a href="{% url 'logout' %}">
+                            <span aria-hidden="true"></span>Logout
+                        </a>
+            <center style="color:#fff"><h3>Welcome {{user.username}}!!</h3></center>
+<!--            <a href="{% url 'index' %}"><span aria-hidden="true"></span>Get Recommendation</a>-->
+            {%endif%}
+
+
+        </ul>
+    </nav>
+{% if messages %}
+{% for message in messages %}
+    <div class="container-fluid" id="conf">
+
+                    <div class="text-center" id="txtcen">
+                        <p style="font-size=20rem"> <strong>Success!</strong> {{message}} <a href="http://127.0.0.1:8000/" id="a" class="alert-link">OK</a></p>
+                    </div>
+    </div>
+{% endfor %}
+{% endif %}
+  <section class="dd">
+  <div class="d1">
+      <a href="#">
+          <img src="{{ movies.movie_logo.url}}" class="img-responsive">
+      </a>
+
+  </div>
+  <div class="d2">
+      <div class="d21">
+  <p>{{movies.desc}}</p>
+      </div>
+
+  <div class="col-sm-offset-0 col-sm-8">
+      <ul>
+                <form class="form-horizontal" role="search" method="post" action="{% url 'rating' movies.id %}" onsubmit="return validateForm()"  name="ratingForm">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="row">
+                                <div class="col-lg-14">
+                                    <div class="star-rating">
+                                        <span class="fa fa-star-o" data-rating="1"></span>
+                                        <span class="fa fa-star-o" data-rating="2"></span>
+                                        <span class="fa fa-star-o" data-rating="3"></span>
+                                        <span class="fa fa-star-o" data-rating="4"></span>
+                                        <span class="fa fa-star-o" data-rating="5"></span>
+
+                                        {% if rate_flag %}
+                                            <input type="hidden" name="rating" class="rating-value" value="{{movie_rating}}" >
+                                        {% else %}
+                                            <input type="hidden" name="rating" class="rating-value" value="0">
+                                        {% endif %}
+                                        {% csrf_token %}
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" onclick="window.location.href='http://127.0.0.1:8000/'" class="button" value="Submit">
+                        </div>
+                    </div>
+                </form>
+      </ul>
+            </div>
+
+      <p>{{movies.title}}</p>
+      <p>Genre: {{movies.genre}}</p>
+  </div>
+  </section>
+</body>
+<script type="text/javascript" src="{%static 'js/jquery.min.js'%}">
+	</script>
+
+	<script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}">
+	</script>
+<script>
+    function alertFun(){
+    alert("sdfsd");
+    window.location.href = "http://127.0.0.1:8000/";
+    }
+</script>
+<script>
+var $star_rating = $('.star-rating .fa');
+
+    var SetRatingStar = function() {
+        return $star_rating.each(function() {
+        if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+            return $(this).removeClass('fa-star-o').addClass('fa-star');
+        } else {
+        return $(this).removeClass('fa-star').addClass('fa-star-o');
+        }
+        });
+        };
+
+    $star_rating.on('click', function() {
+    $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+    return SetRatingStar();
+    });
+
+    SetRatingStar();
+    $(document).ready(function() {
+
+    });
+function validateForm(){
+    var x = document.forms["ratingForm"]["rating"].value;
+    if(x=="0"){
+        alert("Invalid Input");
+        return false;
+    }
+    }
+</script>
+
+</html>
